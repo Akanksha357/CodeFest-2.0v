@@ -1,0 +1,53 @@
+package com.companys;
+
+public class EuropeanTownship {
+    // Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+        public static float AccentPaint(float t, float n, float h, float s, float r){
+        /*
+        t = townships
+        n = houses
+        h = Victorian style halls
+        s = Standard rooms
+        r = Roof bed rooms
+        */
+            float kitwall = 4;
+            float wallinhouse = (s*4) + (r*4);
+            float townshipwall = t*(n*(wallinhouse+6));
+            float accentpaint = (townshipwall/2);
+
+            return accentpaint;
+        }
+        public static float RegularPaint(float t, float n, float h, float s, float r){
+        /*
+        t = townships
+        n = houses
+        h = Victorian style halls
+        s = Standard rooms
+        r = Roof bed rooms
+        */
+            float kitwall = 4;
+            float wallinhouse = (s*4) + (r*4);
+            float townshipwall = t*(n*(wallinhouse+6));
+            float regularpaint = (townshipwall/2);
+
+            return regularpaint;
+        }
+        public static float TimeTaken(float t, float n, float h, float s, float r){
+            float accenttime = accentpaint*2.5;
+            float regulartime = regularpaint*3.25;
+            float time = accenttime + regulartime;
+
+            return time;
+        }
+        public static void main(String[] args) {
+            EuropeanTownship case = new EuropeanTownship();
+            float accpaint = case AccentPaint(50,6,2,5,2);
+            float regpaint = case RegularPaint(50,6,2,5,2);
+            float totaltime = case TimeTaken(50,6,2,5,2);
+            System.out.println(accpaint);
+            System.out.println(regpaint);
+            System.out.println(totaltime);
+        }
+
+}
